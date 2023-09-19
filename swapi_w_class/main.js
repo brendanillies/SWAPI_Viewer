@@ -8,6 +8,19 @@ const starshipsButton = document.querySelector('#submit_starships');
 const vehicleButton = document.querySelector('#submit_vehicle');
 const table = document.querySelector('table');
 
+const links = {
+    'homeworld': 'name',
+    'films': 'title',
+    'species': 'name',
+    'starships': 'name',
+    'vehicles': 'name',
+    'residents': 'name',
+    'people': 'name',
+    'planets': 'name',
+    'characters': 'name',
+    'pilots': 'name'
+}
+
 /**
  * Trims whitespace and capitalizes single word
  * @param {string} word - Word to capitalize 
@@ -329,23 +342,14 @@ class StringActions {
 
 class LinkActions {
 
-    #links = {
-        'homeworld': 'name',
-        'films': 'title',
-        'species': 'name',
-        'starships': 'name',
-        'vehicles': 'name',
-        'residents': 'name',
-        'people': 'name',
-        'planets': 'name',
-        'characters': 'name',
-        'pilots': 'name'
-    }
-
     /**
      * Collection of methods related to creating SWAPI child links
      */
-    constructor() { };
+    constructor(links) {
+
+        this.links = links;
+
+    };
 
     /**
      * Constructs unordered list element of SWAPI child Resources with displayed 
@@ -409,13 +413,13 @@ class LinkActions {
 
     /**
      * Finds text to display from SWAPI child Resource of submitted SWAPI Resource. Uses
-     * static object for identifying data mapping.
+     * global object for identifying data mapping.
      * @param {string} link - `https` reference of SWAPI child Resource
      * @param {object} data - Object of SWAPI child Resource
      * @returns {string} Display text of SWAPI child Resource
      */
     #findLinkDisplayText(link, data) {
-        const property = this.#links[link.split('/')[4]];
+        const property = links[link.split('/')[4]];
         return data[property];
     }
 }
