@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Star Wars API Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <header>
+
+            <h1>Star Wars API Viewer</h1>
+            <p>To get started, simply click any buton for a random <code>fetch</code> of Star Wars' peoples, species, planets, and more!</p>
+            <div class="d-flex flex-row w-100 justify-content-evenly">
+                <button id="submit_people" type="button">Retrieve Character</button>
+                <button id="submit_species" type="button">Retrieve Species</button>
+                <button id="submit_planets" type="button">Retrieve Planet</button>
+                <button id="submit_films" type="button">Retrieve Film</button>                
+                <button id="submit_starships" type="button">Retrieve Starship</button>                
+                <button id="submit_vehicles" type="button">Retrieve Vehicle</button>                
+            </div>
+
+        </header>
+        <main class="d-flex">
+            <table class="d-none table table-striped"></table>
+        </main>
+        <footer>
+            <p>Powered by <a href="https://swapi.dev/">SWAPI</a></p>
+        </footer>
+
+    </div>
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
+</body>
+</html>
